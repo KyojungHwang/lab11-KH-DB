@@ -1,11 +1,35 @@
-"""
-calculator.py
-- Defines functions used to create a simple calculator
+# https://github.com/KyojungHwang/lab11-KH-DB
+# Partner 1: KyoJung Hwang
+# Partner 2: Dennis Bamaca Perez
 
-One function per operation, in order.
-"""
-# First example
-def add(a, b): 
-    pass
+import math
 
 
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if a == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return b / a
+
+
+def logarithm(a, b):
+    if a <= 0 or a == 1:
+        raise ValueError("Invalid logarithm base.")
+    if b <= 0:
+        raise ValueError("Invalid logarithm argument.")
+    return math.log(b, a)
+
+
+def exponent(a, b):
+    return a ** b
