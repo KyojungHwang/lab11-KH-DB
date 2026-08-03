@@ -7,11 +7,16 @@ from calculator import *
 
 
 class TestCalculator(unittest.TestCase):
-    ######## Partner 2
-    # Dennis will complete:
-    # test_add
-    # test_subtract
-    ########
+
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-4, 3), -1)
+        self.assertEqual(add(0, 8), 8)
+
+    def test_subtract(self):
+        self.assertEqual(sub(5, 3), 2)
+        self.assertEqual(sub(-4, 3), -7)
+        self.assertEqual(sub(8, 0), 8)
 
     ######## Partner 1
     def test_multiply(self):
@@ -25,13 +30,19 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(div(4, 0), 0.0)
     ########
 
-    ######## Partner 2
-    # Dennis will complete:
-    # test_divide_by_zero
-    # test_logarithm
-    # test_log_invalid_base
-    ########
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            div(0, 10)
 
+    def test_logarithm(self):
+        self.assertAlmostEqual(log(2, 8), 3.0)
+        self.assertAlmostEqual(log(10, 100), 2.0)
+        self.assertAlmostEqual(log(3, 9), 2.0)
+
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            log(1, 10)
+            
     ######## Partner 1
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
