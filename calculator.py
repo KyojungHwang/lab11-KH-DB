@@ -19,7 +19,7 @@ def add(a, b):
     return a + b
 
 
-def sub(a, b):
+def subtract(a, b):
     return a - b
 
 
@@ -27,7 +27,13 @@ def mul(a, b):
     return a * b
 
 
-def log(a, b):
+def div(a, b):
+    if a == 0:
+        raise ZeroDivisionError("Cannot divide by zero.")
+    return b / a
+
+
+def logarithm(a, b):
     if a <= 0 or a == 1:
         raise ValueError("Invalid logarithm base.")
     if b <= 0:
